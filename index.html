@@ -41,7 +41,7 @@
     function generateNewWave() {
       const originalWave = document.querySelector('.wave');
       if (originalWave) {
-        const newNode = originalWave.cloneNode();
+        const newNode = originalWave.cloneNode(true);
         newNode.style.position = 'absolute';
         newNode.style.top = Math.random() * document.documentElement.clientHeight
         newNode.style.left = Math.random() * document.documentElement.clientWidth
