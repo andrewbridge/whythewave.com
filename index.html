@@ -32,7 +32,15 @@
   <h1>Why the wave, Dom?</h1>
   <p class="wave">&#x1F44B;</p>
   <script type="text/javascript">
-     
+    function generateNewWave() {
+      const originalWave = document.querySelector('.wave');
+      if (originalWave) {
+        const newNode = originalWave.cloneNode();
+        newNode.style.position = 'absolute';
+        newNode.style.top = Math.random() * document.documentElement.clientHeight
+        newNode.style.left = Math.random() * document.documentElement.clientWidth
+      }
+    }
   </script>
 </body>
 </html>
