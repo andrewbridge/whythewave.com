@@ -2,7 +2,12 @@
 <head>
   <title>Why the the wave, Dom? </title>
   <style type="text/css">
+    * {
+      text-align: center; 
+    }
+    
     .wave {
+      font-size: 10vw;
       animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both infinite;
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;
@@ -39,8 +44,11 @@
         newNode.style.position = 'absolute';
         newNode.style.top = Math.random() * document.documentElement.clientHeight
         newNode.style.left = Math.random() * document.documentElement.clientWidth
+        newNode.style.fontSize = ((Math.random() * 5) + 10) + 'vw';
       }
     }
+    
+    setInterval(generateNewWave, 2000);
   </script>
 </body>
 </html>
