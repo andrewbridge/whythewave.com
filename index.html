@@ -21,6 +21,9 @@
     }
     
     .wave {
+      position: absolute;
+      top: 15vh;
+      left: 43vw;
       margin: 0;
       font-size: 10vw;
       animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both infinite;
@@ -56,7 +59,6 @@
       const originalWave = document.querySelector('.wave');
       if (originalWave) {
         const newNode = originalWave.cloneNode(true);
-        newNode.style.position = 'absolute';
         newNode.style.top = parseInt(Math.random() * (document.documentElement.clientHeight - 50));
         newNode.style.left = parseInt(Math.random() * (document.documentElement.clientWidth - 50));
         newNode.style.fontSize = parseInt((Math.random() * 20) + 10) + 'vw';
