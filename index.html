@@ -5,9 +5,23 @@
     * {
       text-align: center;
       font-family: sans-serif;
+      overflow: hidden;
+    }
+    
+    h1 {
+      z-index: 1;
+      position: relative;
+      margin: 45vh auto;
+      background: #07D;
+      display: inline-block;
+      color: white;
+      font-weight: normal;
+      border-radius: 1em;
+      padding: 10px 20px
     }
     
     .wave {
+      margin: 0;
       font-size: 10vw;
       animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both infinite;
       transform: translate3d(0, 0, 0);
@@ -43,14 +57,22 @@
       if (originalWave) {
         const newNode = originalWave.cloneNode(true);
         newNode.style.position = 'absolute';
-        newNode.style.top = Math.random() * document.documentElement.clientHeight
-        newNode.style.left = Math.random() * document.documentElement.clientWidth
-        newNode.style.fontSize = ((Math.random() * 5) + 10) + 'vw';
+        newNode.style.top = Math.random() * (document.documentElement.clientHeight - 50);
+        newNode.style.left = Math.random() * (document.documentElement.clientWidth - 50);
+        newNode.style.fontSize = ((Math.random() * 20) + 10) + 'vw';
         document.body.appendChild(newNode);
       }
     }
     
-    setInterval(generateNewWave, 2000);
+    function removeWaves() {
+      var waves = document.querySelectorAll('.wave');
+      for (var i = 0; waves.length > i; i++) {
+        document.body.removeChild(waves[i]);
+      }
+    }
+    
+    setInterval(generateNewWave, 500);
+    setInterval(removeWaves, 60000);
   </script>
 </body>
 </html>
