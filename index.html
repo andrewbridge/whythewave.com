@@ -57,9 +57,9 @@
       if (originalWave) {
         const newNode = originalWave.cloneNode(true);
         newNode.style.position = 'absolute';
-        newNode.style.top = Math.random() * (document.documentElement.clientHeight - 50);
-        newNode.style.left = Math.random() * (document.documentElement.clientWidth - 50);
-        newNode.style.fontSize = ((Math.random() * 20) + 10) + 'vw';
+        newNode.style.top = parseInt(Math.random() * (document.documentElement.clientHeight - 50));
+        newNode.style.left = parseInt(Math.random() * (document.documentElement.clientWidth - 50));
+        newNode.style.fontSize = parseInt((Math.random() * 20) + 10) + 'vw';
         document.body.appendChild(newNode);
       }
     }
